@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mo.exercise.graph.ReadDataTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-27T19:26:21" hostname="LAPTOP-C22KQ5PB" time="0.052">
+  <properties/>
+  <testcase name="testGetExtendedFamilyCount" classname="com.mo.exercise.graph.ReadDataTest" time="0.052"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
