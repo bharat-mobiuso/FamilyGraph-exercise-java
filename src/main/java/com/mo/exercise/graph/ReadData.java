@@ -57,8 +57,7 @@ public class ReadData {
         }
         return null;
     }
-    public List<Relatives> getRelativesList(String name) {
-        List<Person> peopleList = getAllPerson();
+    public List<Relatives> getRelativesList(String name,List<Person> peopleList) {
         getAllPeopleRelationShip(peopleList);
         // should be based on the unique key as email
         List<Person> peoples = peopleList.stream().filter(people -> people.getName().equalsIgnoreCase(name))
@@ -70,7 +69,8 @@ public class ReadData {
     }
 
     public List<String> getRelatives(Person person){
-        List<Relatives> relativesList = this.getRelativesList(person.getName());
+        List<Person> peopleList = getAllPerson();
+        List<Relatives> relativesList = this.getRelativesList(person.getName(),peopleList);
         List<String> relatives = new ArrayList<>();
         relativesList.forEach(rel -> {
             relatives.add(rel.getPerson().getName() + " " + rel.getRelationShip());
