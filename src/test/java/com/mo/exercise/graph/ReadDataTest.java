@@ -2,7 +2,18 @@ package com.mo.exercise.graph;
 
 import junit.framework.TestCase;
 
+import java.util.List;
+
 public class ReadDataTest extends TestCase {
+
+    // validate correct No. of People are Loaded
+    public void testGetAllPerson() {
+        ReadData r = new ReadData();
+
+        List<Person> allPeople = r.getAllPerson();
+
+        assertEquals(12, allPeople.size());
+    }
 
     // validate correct relationships loaded
     public void testGetRelationShipCount() {
