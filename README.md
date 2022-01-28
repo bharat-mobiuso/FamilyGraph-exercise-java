@@ -3,7 +3,7 @@
 
 For Detail Explanation of Problem please refer pdf attached [click Here](https://github.com/bharat-mobiuso/FamilyGraph-exercise-java/blob/main/README.pdf)
 
-> `Note` This Exercise is created in IntelliJ
+>`Note` Exercise is created in Java only, other language are used in Gradle in IntelliJ
 
 > [![N|Solid](https://github.com/bharat-mobiuso/FamilyGraph-exercise-java/blob/main/intelliJ.svg)](https://www.jetbrains.com/idea/download/#section=windows)
 ## Exercise 1
