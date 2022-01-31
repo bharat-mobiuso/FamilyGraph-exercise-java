@@ -57,10 +57,12 @@ public class ReadData {
         }
         return null;
     }
-    public List<Relatives> getRelativesList(String name,List<Person> peopleList) {
-        getAllPeopleRelationShip(peopleList);
+    public List<Relatives> getRelativesList(String name) {
+        List<Person> personList = getAllPerson();
+
+        getAllPeopleRelationShip(personList);
         // should be based on the unique key as email
-        List<Person> peoples = peopleList.stream().filter(people -> people.getName().equalsIgnoreCase(name))
+        List<Person> peoples = personList.stream().filter(people -> people.getName().equalsIgnoreCase(name))
                 .collect(Collectors.toList());
         if (null == peoples || peoples.size() > 1 || peoples.isEmpty()) {
             return null;
@@ -69,8 +71,7 @@ public class ReadData {
     }
 
     public List<String> getRelatives(Person person){
-        List<Person> peopleList = getAllPerson();
-        List<Relatives> relativesList = this.getRelativesList(person.getName(),peopleList);
+        List<Relatives> relativesList = this.getRelativesList(person.getName());
         List<String> relatives = new ArrayList<>();
         relativesList.forEach(rel -> {
             relatives.add(rel.getPerson().getName() + " " + rel.getRelationShip());
@@ -80,6 +81,7 @@ public class ReadData {
 
     public int getRelationShipCount(String name) {
         List<Person> peopleList = getAllPerson();
+
         getAllPeopleRelationShip(peopleList);
         // should be based on the unique key as email
         List<Person> peoples = peopleList.stream().filter(people -> people.getName().equalsIgnoreCase(name))
