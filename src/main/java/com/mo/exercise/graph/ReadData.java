@@ -25,8 +25,7 @@ public class ReadData {
         }
         return peopleList;
     }
-    public List<Relatives> getAllPeopleRelationShip(List<Person> listPeople) {
-        List<Relatives> relationshipsList = new ArrayList<>();
+    public void getAllPeopleRelationShip(List<Person> listPeople) {
         try (FileReader fr = new FileReader("src/test/resources/relationships.csv");
              BufferedReader br = new BufferedReader(fr);) {
 
@@ -47,7 +46,6 @@ public class ReadData {
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
-        return relationshipsList;
     }
     private Person getPersonByEmail(List<Person> peopleList, String email) {
         List<Person> listPeople = peopleList.stream().filter(people -> people.getEmail().equals(email))
