@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ReadData {
+public class DataReaderUtility {
 
     public List<Person> getAllPerson() {
         List<Person> peopleList = new ArrayList<>();
@@ -25,6 +25,7 @@ public class ReadData {
         }
         return peopleList;
     }
+
     public void getAllPeopleRelationShip(List<Person> listPeople) {
         try (FileReader fr = new FileReader("src/test/resources/relationships.csv");
              BufferedReader br = new BufferedReader(fr);) {
@@ -47,6 +48,7 @@ public class ReadData {
             System.err.format("IOException: %s%n", e);
         }
     }
+
     private Person getPersonByEmail(List<Person> peopleList, String email) {
         List<Person> listPeople = peopleList.stream().filter(people -> people.getEmail().equals(email))
                 .collect(Collectors.toList());
@@ -55,6 +57,7 @@ public class ReadData {
         }
         return null;
     }
+
     public List<Relatives> getRelativesList(String name) {
         List<Person> personList = getAllPerson();
 
@@ -118,7 +121,7 @@ public class ReadData {
 
     public static void main(String[] args) {
 
-        ReadData r = new ReadData();
+        DataReaderUtility r = new DataReaderUtility();
         List<Person> personList = r.getAllPerson();
 
         // print person and it's relations

@@ -4,11 +4,11 @@ import junit.framework.TestCase;
 
 import java.util.List;
 
-public class ReadDataTest extends TestCase {
+public class DataReaderUtilityTest extends TestCase {
 
     // validate correct No. of People are Loaded
     public void testGetAllPerson() {
-        ReadData r = new ReadData();
+        DataReaderUtility r = new DataReaderUtility();
 
         List<Person> allPeople = r.getAllPerson();
 
@@ -17,7 +17,7 @@ public class ReadDataTest extends TestCase {
 
     // validate correct relationships loaded
     public void testGetRelationShipCount() {
-        ReadData r = new ReadData();
+        DataReaderUtility r = new DataReaderUtility();
 
         int bobRelationshipsCount = r.getRelationShipCount("Bob");
         int jennyRelationshipsCount = r.getRelationShipCount("Jenny");
@@ -32,7 +32,7 @@ public class ReadDataTest extends TestCase {
 
     // validate size of extended family count
     public void testGetExtendedFamilyCount() {
-        ReadData r = new ReadData();
+        DataReaderUtility r = new DataReaderUtility();
 
         int bobExtendedFamilyCount = r.getExtendedFamilyCount("Bob");
         int jennyExtendedFamilyCount = r.getExtendedFamilyCount("Jenny");
