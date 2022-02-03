@@ -7,10 +7,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class DataReaderUtility {
+    String filepathOfPeopleList = "src/test/resources/people.csv";
+    String filepathOfRelationshipsList = "src/test/resources/relationships.csv";
 
     public List<Person> getAllPerson() {
         List<Person> peopleList = new ArrayList<>();
-        try (FileReader fr = new FileReader("src/test/resources/people.csv");
+        try (FileReader fr = new FileReader(filepathOfPeopleList);
              BufferedReader br = new BufferedReader(fr);) {
 
             // read line by line
@@ -27,7 +29,7 @@ public class DataReaderUtility {
     }
 
     public void getAllPeopleRelationShip(List<Person> listPeople) {
-        try (FileReader fr = new FileReader("src/test/resources/relationships.csv");
+        try (FileReader fr = new FileReader(filepathOfRelationshipsList);
              BufferedReader br = new BufferedReader(fr);) {
 
             // read line by line
