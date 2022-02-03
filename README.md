@@ -43,11 +43,11 @@ public List<Person> getAllPerson() {
 }
 ```
 ```sh
-public List<Relatives> getAllPeopleRelationShip(List<Person> listPeople) {
-    List<Relatives> relationshipsList = new ArrayList<>();
+public void getAllPeopleRelationShip(List<Person> listPeople) {
     try (FileReader fr = new FileReader("src/test/resources/relationships.csv");
          BufferedReader br = new BufferedReader(fr);) {
 
+        // read line by line
         String line;
         while ((line = br.readLine()) != null) {
             if (line.trim().length() == 0) {
@@ -64,7 +64,6 @@ public List<Relatives> getAllPeopleRelationShip(List<Person> listPeople) {
     } catch (IOException e) {
         System.err.format("IOException: %s%n", e);
     }
-    return relationshipsList;
 }
 ```
 ## Exercise 2 
